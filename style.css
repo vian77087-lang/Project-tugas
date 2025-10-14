@@ -1,240 +1,134 @@
-/* ==================================== */
-/* === STYLING UTAMA (DESKTOP) === */
-/* ==================================== */
+<style>
+        /* CSS untuk menengahkan konten */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Menengahkan secara horizontal */
+            justify-content: center; /* Menengahkan secara vertikal (jika body cukup tinggi) */
+            height: 100vh; /* Tinggi penuh viewport agar vertikal centering berfungsi */
+            text-align: center; /* Untuk menengahkan teks/elemen inline di dalamnya */
+        }
+        
+        /* Mengatur agar gambar dan form memiliki margin yang baik */
+        img {
+            margin-bottom: 20px;
+            max-width: 100%; /* Agar gambar responsif */
+            height: auto;
+        }
 
-/* CSS untuk menengahkan konten */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 20px;
-    text-align: center;
-    width: 100%;
-    box-sizing: border-box;
-}
+        /* Perbaikan untuk form agar lebih rapi */
+        form {
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: rgba(255, 255, 255, 0.9); /* Tambahkan transparansi agar background terlihat */
+            border-radius: 5px;
+            width: 300px; /* Lebar form yang spesifik */
+            max-width: 90%; /* Memastikan form mengecil pada layar sangat kecil */
+        }
 
-/* Styling untuk Header (Mencakup gaya inline dari HTML) */
-h1 {
-    color: black; 
-    background-color: rgba(255, 255, 255, 0.7); 
-    padding: 5px; 
-    border-radius: 5px;
-    max-width: 100%;
-    /* Menghapus align="center" dari inline dan mengandalkan text-align: center; dari .container atau menambahkan text-align: center; */
-    text-align: center;
-}
+        /* Styling untuk input agar terlihat lebih baik */
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 10px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box; /* Agar padding tidak menambah lebar total */
+            font-size: 16px; /* Agar tidak di-zoom pada mobile */
+        }
 
-/* Mengatur agar gambar dan form memiliki margin yang baik */
-img {
-    margin-bottom: 20px;
-    max-width: 100%;
-    height: auto;
-    img-align: center;
-}
+        /* Styling untuk tombol "Login" */
+        .button {
+            background-color: #3f51b5; /* Warna biru untuk tombol Login */
+            color: white;
+            padding: 10px 15px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 4px;
+            text-decoration: none;
+            display: block;
+            box-sizing: border-box;
+            text-align: center; /* Menengahkan teks di dalam tombol */
+            font-size: 1.1em; /* Ukuran teks tombol */
+        }
 
-/* Perbaikan untuk form agar lebih rapi */
-form {
-    padding: 20px;
-    border: 1px solid #ccc;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 5px;
-    width: 100%;
-    max-width: 380px; /* Batasi lebar maksimum form */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    form-align: center;
-}
+        /* Mengatur agar label input memiliki lebar yang sama */
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 1em; /* Ukuran teks label */
+        }
 
-/* === Styling Input dan Label === */
+        .form-group label {
+            text-align: left;
+            margin-right: 10px;
+            flex-basis: 30%; /* Mengatur lebar label */
+        }
 
-/* Tambahan styling untuk label "Masuk dengan Akun:" agar lebih menonjol */
-.account-label {
-    display: block;
-    text-align: left;
-    margin-bottom: 15px;
-    font-weight: bold;
-    width: 100%;
-    box-sizing: border-box;
-    color: #3f51b5;
-    font-size: 1.1em;
-}
+        /* Container untuk input password dan tombol show/hide */
+        .password-container {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+            margin-bottom: 0; 
+        }
 
-/* Styling untuk input agar terlihat lebih baik */
-input[type="text"], input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0 10px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
+        /* Styling untuk tombol show/hide password */
+        .toggle-password {
+            background: none;
+            border: none;
+            color: #3f51b5;
+            cursor: pointer;
+            font-size: 1.2em; /* Ukuran ikon mata */
+            margin-left: -35px; /* Posisikan di atas input */
+            padding: 0 5px;
+            height: 30px; 
+            display: flex;
+            align-items: center;
+            z-index: 10;
+        }
 
-/* Mengatur agar label input memiliki lebar yang sama (Desktop/Wide View) */
-.form-group {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-}
+        /* Sesuaikan input agar tidak tertutup tombol */
+        .password-container input {
+            padding-right: 40px; /* Beri ruang di kanan untuk ikon */
+            margin-bottom: 0;
+        }
+        
+        /* === MEDIA QUERIES UNTUK RESPONSIF TEKS === */
+        
+        /* Gaya default untuk H1 (layar besar) */
+        h1 {
+            font-size: 2.5em; /* Ukuran standar */
+            padding: 10px;
+        }
 
-.form-group label {
-    text-align: left;
-    margin-right: 10px;
-    flex-basis: 30%; 
-    min-width: 80px;
-}
+        @media (max-width: 500px) {
+            /* Perubahan untuk layar kecil (misalnya, ponsel) */
+            h1 {
+                /* Gunakan unit vw (viewport width) agar ukuran font mengecil seiring layar */
+                font-size: 6vw; 
+                padding: 5px;
+            }
+            
+            form {
+                width: 90%;
+            }
 
-/* === Styling Password Visibility Toggle === */
+            /* Kecilkan teks form sedikit jika perlu */
+            .form-group label {
+                 font-size: 0.9em;
+            }
+            
+            /* Pastikan gambar tidak terlalu besar */
+            img {
+                width: 150px;
+                height: 150px;
+            }
+        }
 
-/* Container untuk input password dan tombol show/hide */
-.password-container {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-    margin-bottom: 10px;
-}
-
-.password-container input {
-    margin: 5px 0 0 0;
-    padding-right: 40px; /* Beri ruang di kanan untuk ikon */
-}
-
-/* Styling untuk tombol show/hide password */
-.toggle-password {
-    background: none;
-    border: none;
-    color: #3f51b5;
-    cursor: pointer;
-    font-size: 1.2em;
-    margin-left: -35px; /* Posisikan di atas input */
-    padding: 0 5px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    z-index: 10;
-}
-
-/* === Styling Tombol Login dan Divider === */
-
-/* Styling untuk tombol "Login" */
-.button {
-    background-color: #3f51b5;
-    color: white;
-    padding: 12px 15px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    border-radius: 4px;
-    text-decoration: none;
-    display: block;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-/* Tambahkan pemisah (garis atau teks "atau") */
-.divider {
-    margin: 15px 0;
-    font-size: 0.9em;
-    color: #777;
-    position: relative;
-    text-align: center;
-}
-
-.divider::before,
-.divider::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    width: 40%;
-    height: 1px;
-    background: #ccc;
-}
-
-.divider::before {
-    left: 0;
-}
-
-.divider::after {
-    right: 0;
-}
-
-/* === START: CSS GOOGLE LOGIN === */
-.google-button {
-    background-color: #fff;
-    color: #444;
-    padding: 12px 15px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    width: 100%;
-    border-radius: 4px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    font-weight: 500;
-    transition: background-color 0.3s;
-}
-.google-button:hover {
-    background-color: #f7f7f7;
-}
-
-.google-icon {
-    margin-right: 10px;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #4285F4;
-}
-/* === END: CSS GOOGLE LOGIN === */
-
-
-/* ========================================= */
-/* === MEDIA QUERIES (RESPONSIVITAS) === */
-/* ========================================= */
-
-@media (max-width: 600px) {
-    /* Untuk layar handphone atau tablet kecil */
+    </style>
     
-    /* Atur agar form-group menumpuk vertikal */
-    .form-group {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-bottom: 5px;
-    }
-
-    /* Label mengambil lebar penuh di layar kecil */
-    .form-group label {
-        flex-basis: auto;
-        width: 100%;
-        margin-right: 0;
-        margin-bottom: 5px;
-    }
-
-    /* Form input container juga mengambil lebar penuh */
-    .password-container {
-        width: 100%;
-        margin-bottom: 5px; 
-    }
-    
-    /* Hapus margin pada input yang berada di password-container saat mobile */
-    .password-container input {
-        margin-bottom: 0; 
-    }
-    
-    /* Sesuaikan header agar terlihat lebih baik di layar kecil */
-    h1 {
-        font-size: 1.3em; 
-        padding: 10px 5px;
-        line-height: 1.3;
-    }
-    
-    /* Kurangi ukuran gambar agar lebih kompak */
-    img {
-        width: 180px;
-        height: 180px;
-        margin-bottom: 15px;
-    }
-}
