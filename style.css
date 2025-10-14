@@ -5,13 +5,13 @@ body{
     flex-direction: column;
     align-items: center; /* Menengahkan secara horizontal */
     justify-content: center; /* Menengahkan secara vertikal (jika body cukup tinggi) */
-    height: 100vh; /* Tinggi penuh viewport agar vertikal centering berfungsi */
+    height: 200vh; /* Tinggi penuh viewport agar vertikal centering berfungsi */
     text-align: center; /* Untuk menengahkan teks/elemen inline di dalamnya */
 }
 
 /* Mengatur agar gambar dan form memiliki margin yang baik */
 img {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     max-width: 100%; /* Agar gambar responsif */
     height: auto;
 }
@@ -31,13 +31,13 @@ input[type="text"], input[type="password"] {
     padding: 8px;
     margin: 5px 0 10px 0;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 1px solid white;
     box-sizing: border-box; /* Agar padding tidak menambah lebar total */
 }
 
 /* Styling untuk tombol "Login" */
 .button {
-    background-color: #3f51b5; /* Warna biru untuk tombol Login */
+    background-color: blue; /* Warna biru untuk tombol Login */
     color: white;
     padding: 10px 15px;
     margin: 8px 0;
@@ -53,11 +53,11 @@ input[type="text"], input[type="password"] {
 
 /* === START: CSS BARU UNTUK GOOGLE LOGIN === */
 .google-button {
-    background-color: #fff; /* Latar putih */
-    color: #444; /* Teks abu-abu gelap */
+    background-color: white; /* Latar putih */
+    color: gray; /* Teks abu-abu gelap */
     padding: 10px 15px;
     margin: 8px 0;
-    border: 1px solid #ccc; /* Border abu-abu */
+    border: 1px solid gray; /* Border abu-abu */
     cursor: pointer;
     width: 100%;
     border-radius: 4px;
@@ -73,7 +73,7 @@ input[type="text"], input[type="password"] {
     margin-right: 10px;
     font-size: 1.2em; 
     font-weight: bold;
-    color: #4285F4; /* Warna biru Google */
+    color: blue; /* Warna biru Google */
 }
 /* === END: CSS BARU UNTUK GOOGLE LOGIN === */
 
@@ -133,14 +133,14 @@ input[type="text"], input[type="password"] {
     font-weight: bold;
     width: 100%; /* Lebar penuh */
     box-sizing: border-box;
-    color: #3f51b5; /* Warna biru agar menonjol */
+    color: blue; /* Warna biru agar menonjol */
 }
 
 /* Tambahkan pemisah (garis atau teks "atau") */
 .divider {
     margin: 15px 0;
     font-size: 0.9em;
-    color: #777;
+    color: black;
     position: relative;
     text-align: center;
 }
@@ -152,7 +152,7 @@ input[type="text"], input[type="password"] {
     top: 50%;
     width: 40%;
     height: 1px;
-    background: #ccc;
+    background: white;
 }
 
 .divider::before {
