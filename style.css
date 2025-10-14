@@ -10,14 +10,14 @@ body{
 }
 
 /* Mengatur agar gambar dan form memiliki margin yang baik */
-img {
+.img {
     margin-bottom: 30px;
     max-width: 100%; /* Agar gambar responsif */
     height: auto;
 }
 
 /* Perbaikan untuk form agar lebih rapi */
-form {
+.form {
     padding: 20px;
     border: 1px solid #ccc;
     background-color: rgba(255, 255, 255, 0.9); /* Tambahkan transparansi agar background terlihat */
@@ -26,7 +26,7 @@ form {
 }
 
 /* Styling untuk input agar terlihat lebih baik */
-input[type="text"], input[type="password"] {
+.input[type="text"], input[type="password"] {
     width: 100%;
     padding: 8px;
     margin: 5px 0 10px 0;
@@ -108,7 +108,7 @@ input[type="text"], input[type="password"] {
 .toggle-password {
     background: none;
     border: none;
-    color: #3f51b5;
+    color: green;
     cursor: pointer;
     font-size: 1.2em; /* Ukuran ikon mata */
     margin-left: -35px; /* Posisikan di atas input */
@@ -157,7 +157,6 @@ input[type="text"], input[type="password"] {
 
 .divider::before {
     left: 0;
-}
 }
 
 .divider::after {
