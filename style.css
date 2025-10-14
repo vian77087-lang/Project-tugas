@@ -1,3 +1,4 @@
+body{
 /* CSS untuk menengahkan konten */
 .container {
     display: flex;
@@ -156,6 +157,7 @@ input[type="text"], input[type="password"] {
 
 .divider::before {
     left: 0;
+}
 }
 
 .divider::after {
