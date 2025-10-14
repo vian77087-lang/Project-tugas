@@ -31,6 +31,7 @@ img {
     margin-bottom: 20px;
     max-width: 100%;
     height: auto;
+    img-align: center;
 }
 
 /* Perbaikan untuk form agar lebih rapi */
@@ -42,6 +43,7 @@ form {
     width: 100%;
     max-width: 380px; /* Batasi lebar maksimum form */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    form-align: center;
 }
 
 /* === Styling Input dan Label === */
