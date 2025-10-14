@@ -1,0 +1,163 @@
+/* CSS untuk menengahkan konten */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Menengahkan secara horizontal */
+    justify-content: center; /* Menengahkan secara vertikal (jika body cukup tinggi) */
+    height: 100vh; /* Tinggi penuh viewport agar vertikal centering berfungsi */
+    text-align: center; /* Untuk menengahkan teks/elemen inline di dalamnya */
+}
+
+/* Mengatur agar gambar dan form memiliki margin yang baik */
+img {
+    margin-bottom: 20px;
+    max-width: 100%; /* Agar gambar responsif */
+    height: auto;
+}
+
+/* Perbaikan untuk form agar lebih rapi */
+form {
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.9); /* Tambahkan transparansi agar background terlihat */
+    border-radius: 5px;
+    width: 300px; /* Lebar form yang spesifik */
+}
+
+/* Styling untuk input agar terlihat lebih baik */
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 10px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box; /* Agar padding tidak menambah lebar total */
+}
+
+/* Styling untuk tombol "Login" */
+.button {
+    background-color: #3f51b5; /* Warna biru untuk tombol Login */
+    color: white;
+    padding: 10px 15px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 4px;
+    text-decoration: none;
+    display: block;
+    box-sizing: border-box;
+    text-align: center; /* Menengahkan teks di dalam tombol */
+}
+
+/* === START: CSS BARU UNTUK GOOGLE LOGIN === */
+.google-button {
+    background-color: #fff; /* Latar putih */
+    color: #444; /* Teks abu-abu gelap */
+    padding: 10px 15px;
+    margin: 8px 0;
+    border: 1px solid #ccc; /* Border abu-abu */
+    cursor: pointer;
+    width: 100%;
+    border-radius: 4px;
+    text-decoration: none;
+    display: flex; /* Menggunakan flexbox untuk menengahkan konten */
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    font-weight: 500;
+}
+
+.google-icon {
+    margin-right: 10px;
+    font-size: 1.2em; 
+    font-weight: bold;
+    color: #4285F4; /* Warna biru Google */
+}
+/* === END: CSS BARU UNTUK GOOGLE LOGIN === */
+
+/* Mengatur agar label input memiliki lebar yang sama */
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    text-align: left;
+    margin-right: 10px;
+    flex-basis: 30%; /* Mengatur lebar label */
+}
+
+/* Container untuk input password dan tombol show/hide */
+.password-container {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    /* Tambahkan sedikit ruang di bawah untuk mengatasi margin input */
+    margin-bottom: 10px; 
+}
+
+.password-container input {
+    margin: 5px 0 0 0; /* Margin atas dan bawah 0, kiri dan kanan 0 */
+}
+
+/* Styling untuk tombol show/hide password */
+.toggle-password {
+    background: none;
+    border: none;
+    color: #3f51b5;
+    cursor: pointer;
+    font-size: 1.2em; /* Ukuran ikon mata */
+    margin-left: -35px; /* Posisikan di atas input */
+    padding: 0 5px;
+    height: 30px; /* Atur tinggi agar sejajar dengan input */
+    display: flex;
+    align-items: center;
+    z-index: 10;
+}
+
+/* Sesuaikan input agar tidak tertutup tombol */
+.password-container input {
+    padding-right: 40px; /* Beri ruang di kanan untuk ikon */
+    margin-bottom: 0;
+}
+
+/* Tambahan styling untuk label "Masuk dengan Akun:" agar lebih menonjol */
+.account-label {
+    display: block; /* Membuat label baru menjadi baris sendiri */
+    text-align: left;
+    margin-bottom: 10px;
+    font-weight: bold;
+    width: 100%; /* Lebar penuh */
+    box-sizing: border-box;
+    color: #3f51b5; /* Warna biru agar menonjol */
+}
+
+/* Tambahkan pemisah (garis atau teks "atau") */
+.divider {
+    margin: 15px 0;
+    font-size: 0.9em;
+    color: #777;
+    position: relative;
+    text-align: center;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background: #ccc;
+}
+
+.divider::before {
+    left: 0;
+}
+
+.divider::after {
+    right: 0;
+}
