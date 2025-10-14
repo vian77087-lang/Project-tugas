@@ -1,4 +1,5 @@
-body{
+
+<style>
 /* CSS untuk menengahkan konten */
 .container {
     display: flex;
@@ -162,3 +163,4 @@ body{
 .divider::after {
     right: 0;
 }
+</style>
