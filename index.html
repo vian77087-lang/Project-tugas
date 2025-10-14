@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PERPUSTAKAAN SMK NEGERI RENGEL</title>
+    <link rel="stylesheet" href="style.css"> 
+    
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    
+    <script>
+        // Fungsi JavaScript untuk memvalidasi password
+        function validasiLogin(event) {
+            event.preventDefault();
+            
+            const passwordInput = document.getElementById('password').value;
+            const passwordBenar = "12345678"; // <--- Password yang Benar
+            
+            if (passwordInput === passwordBenar) {
+                alert("Login berhasil! Mengalihkan ke halaman...");
+                window.location.href = "html2.txt";
+            } else {
+                alert("Password salah! Silakan coba lagi.");
+                return false;
+            }
+        }
+
+        // FUNGSI BARU: Untuk mengubah tipe input password dengan ikon
+        function togglePasswordVisibility() {
+            const passwordField = document.getElementById('password');
+            const toggleButton = document.getElementById('togglePass');
+            
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                // Ganti ikon menjadi mata terbuka (Lihat/Show)
+                toggleButton.innerHTML = '&#x1F441;&#xFE0F;'; // Karakter Unicode Mata (👁️)
+            } else {
+                passwordField.type = "password";
+                // Ganti ikon menjadi mata dicoret (Sembunyikan/Hide)
+                toggleButton.innerHTML = '&#x1F576;'; // Mata dengan Ikon lain yang terlihat 'tersembunyi'
+            }
+        }
+        
+        // FUNGSI GOOGLE CALLBACK
+        function handleCredentialResponse(response) {
+            // Di sini Anda akan mengirim 'response.credential' (JSON Web Token) ke backend server Anda
+            console.log("Encoded JWT ID token: " + response.credential);
+            alert("Login Google berhasil! Token diterima. Periksa console log.");
+            // window.location.href = "html2.txt"; // Arahkan pengguna setelah verifikasi backend
+        }
+    </script>
+</head>
+<body style=" background-image: url(smkn\ jpg.png); background-repeat: no-repeat; background-position: center; background-size: cover;" >
+
+    <div class="container">
+        <h1 align="center" style="color: black; background-color: rgba(255, 255, 255, 0.7); padding: 5px; border-radius: 5px;">PERPUSTAKAAN SMK NEGERI RENGEL</h1>
+        
+        <img src="smk jpg.png" alt="Logo SMK" width="300" height="300">
+        
+        <form onsubmit="validasiLogin(event)">
+            <label class="account-label">Masuk dengan Akun:</label>
+            
+            <div class="form-group">
+                <label for="Username">Username:</label>
+                <input type="text" name="Username" id="Username" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <div class="password-container">
+                    <input type="password" name="password" id="password" required>
+                    <button type="button" id="togglePass" class="toggle-password" onclick="togglePasswordVisibility()">&#x1F576;</button>
+                </div>
+            </div>
+            
+            <button type="submit" class="button" style="background-color: #3f51b5;">Login</button>
+            
+            <div class="divider">ATAU</div>
+            
+            <div id="g_id_onload"
+                 data-client_id="GANTILAH_INI_DENGAN_CLIENT_ID_GOOGLEYANG_VALID"
+                 data-context="signin"
+                 data-ux_mode="popup"
+                 data-callback="handleCredentialResponse"
+                 data-auto_prompt="false">
+            </div>
+
+            <div class="g_id_signin"
+                 data-type="standard"
+                 data-shape="rectangular"
+                 data-theme="outline"
+                 data-text="signin_with"
+                 data-size="large"
+                 data-logo_alignment="left">
+            </div>
+            </form>
+    </div>
+</body>
+</html>
